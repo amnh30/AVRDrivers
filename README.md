@@ -1,5 +1,3 @@
-Here’s the complete **README.md** file for your AVR Atmega32 Drivers project, with the added details about **Interrupt Management System** and all the other updates:
-
 ---
 
 # **AVR Atmega32 Drivers Project** 🚀
