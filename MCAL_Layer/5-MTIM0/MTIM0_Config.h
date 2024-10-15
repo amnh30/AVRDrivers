@@ -1,0 +1,22 @@
+#ifndef MADC_CONFIG_H
+#define MADC_CONFIG_H
+
+/* Vreference Config */
+#define MADC_V_REFERENC_MODE      MADC_AVCC  
+
+/* Adjust Value */
+#define MADC_ADJUST_VALUE         MADC_ADJUST_RIGHT  
+
+/* Enable SINGLE or Auto Trigger Mode */
+#define MADC_TRIGGER_MODE         MADC_SINGLE_TRIGGER_MODE  
+
+/* Prescaler Configuration (Options: MADC_PRESCALER_2, MADC_PRESCALER_4, MADC_PRESCALER_8, MADC_PRESCALER_16, MADC_PRESCALER_32, MADC_PRESCALER_64, MADC_PRESCALER_128) */
+#define MADC_PRESCALER            MADC_PRESCALER_64  
+
+/* ADC Enable (Options: MADC_ENABLE, MADC_DISABLE) */
+#define MADC_ADC_ENABLE           MADC_ENABLE 
+
+/* Start Conversion (Options: MADC_START_CONVERSION, MADC_NO_CONVERSION) */
+#define MADC_START_CONVERSION     MADC_START_CONVERSION  
+
+#endif
