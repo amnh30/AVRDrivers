@@ -37,7 +37,7 @@ This repository provides drivers for the **AVR ATmega32** microcontroller, focus
 
 ## Example Code 🖥️
 
-### LCD Example
+### LCD Example 📺
 ```c
 #include "HLCD_interface.h"
 
@@ -50,17 +50,37 @@ int main(void) {
 }
 ```
 
-### Stepper Motor Example
+### Stepper Motor Example ⚙️
 ```c
 #include "HSTEPM_interface.h"
 
 int main(void) {
-    u16 angle = 90;
-    u8 direction = HSTEPM_CLOCK_WISE;
-    u8 speed = 5; // Speed from 2 to 10
+    u16 angle = 90;                      // Desired angle (e.g., 90 degrees)
+    u8 direction = HSTEPM_CLOCK_WISE;    // Clockwise direction
+    u8 speed = 5;                         // Speed from 2 to 10
     
     HSTEPM_u8RunStepperMotor(angle, direction, speed); // Rotate motor 90° clockwise at speed 5
     while(1);
+    return 0;
+}
+```
+
+### Keypad Example ⌨️
+```c
+#include "HKEYPAD_interface.h"
+
+int main(void) {
+    u8 key;
+    
+    HKEYPAD_VoidInit();                // Initialize keypad
+    
+    while(1) {
+        key = HKEYPAD_u8GetKey();      // Get keypress
+        if (key != KEYPAD_NO_PRESS) {
+            // Process key press (e.g., display on LCD)
+            HLCD_VoidLcdWriteChar(key);
+        }
+    }
     return 0;
 }
 ```
@@ -78,9 +98,12 @@ int main(void) {
 ### 2. Stepper Motor Driver ⚙️
 - **Control**: `HSTEPM_u8RunStepperMotor()`
 - **Adjustable Parameters**: Rotation angle, direction (clockwise/anti-clockwise), speed (range: 2-10).
+- **Example**: Rotate the motor 90° clockwise with speed 5.
 
 ### 3. Keypad Driver ⌨️
+- **Initialization**: `HKEYPAD_VoidInit()`
 - **Capture Input**: `HKEYPAD_u8GetKey()` reads keypresses from the 4x4 keypad matrix.
+- **Handling Keypress**: Process keypresses (e.g., display on LCD or store data).
 
 ---
 
@@ -116,4 +139,4 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ---
 
-This professional and emoji-enhanced `README.md` should help engage readers and provide a clear, visually appealing overview of your project! Let me know if you need further adjustments.
+This updated `README.md` integrates the **Stepper Motor** and **Keypad** functionality, provides clear examples for each, and uses emojis to make it more visually engaging. Let me know if you need more modifications or additions!
